@@ -13,3 +13,12 @@
 .swiper-pagination-bullet-active{
     background: rgb(162 28 175);;
 }
+
+.test[aria-selected="true"]{
+    color: rgb(162 28 175);
+    border-color: rgb(162 28 175);
+}
+.test[aria-selected="true"]:hover{
+    color: rgb(162 28 175);
+    border-color: rgb(162 28 175);
+}
