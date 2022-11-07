@@ -1,4 +1,5 @@
 /* navigation */
+/*jshint esnext: true */
 const toggler = document.getElementById("toggler");
 const mNav = document.getElementById("mobile__nav");
 const close = document.getElementById("toggler__expanded");
@@ -63,3 +64,53 @@ function slideTwo(){
   max.dataset.before = second.value;
   fillColor();
 }
+
+
+/* number */
+function decrement(e) {
+  const btn = e.target.parentNode.parentElement.querySelector(
+    'button[data-action="decrement"]'
+  );
+  const target = btn.nextElementSibling;
+  let value = Number(target.value);
+  value--;
+  target.value = value;
+}
+
+function increment(e) {
+  const btn = e.target.parentNode.parentElement.querySelector(
+    'button[data-action="decrement"]'
+  );
+  const target = btn.nextElementSibling;
+  let value = Number(target.value);
+  value++;
+  target.value = value;
+}
+
+const decrementButtons = document.querySelectorAll(
+  `button[data-action="decrement"]`
+);
+
+const incrementButtons = document.querySelectorAll(
+  `button[data-action="increment"]`
+);
+
+decrementButtons.forEach(btn => {
+  btn.addEventListener("click", decrement);
+});
+
+incrementButtons.forEach(btn => {
+  btn.addEventListener("click", increment);
+});
+
+/* cart */
+$("#block2").hide();
+$("#btn1").click(function() {
+  $("#block2").fadeOut("slow");
+  $("#block1").fadeIn("slow");
+});
+$("#btn2").click(function() {
+  $("#block1").fadeOut("slow");
+  $("#block2").fadeIn("slow");
+});
+
