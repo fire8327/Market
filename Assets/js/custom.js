@@ -103,8 +103,9 @@ incrementButtons.forEach(btn => {
   btn.addEventListener("click", increment);
 });
 
-/* cart */
+/* cart and orders*/
 $("#block2").hide();
+$("#block1").show();
 $("#btn1").click(function() {
   $("#block2").fadeOut("slow");
   $("#block1").fadeIn("slow");
